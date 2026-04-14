@@ -1,4 +1,9 @@
-import { createClient } from '@supabase/supabase-js'
+// app/auth/callback/route.ts
+// Handles the OAuth callback from Discord (and any future OAuth providers).
+// Exchanges the one-time code for a session stored in cookies.
+// Then redirects to /dashboard.
+
+import { createSupabaseServerClient } from '@/lib/supabase-server'
 import { NextResponse } from 'next/server'
 
 export async function GET(request: Request) {
@@ -6,10 +11,7 @@ export async function GET(request: Request) {
   const code = searchParams.get('code')
 
   if (code) {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
+    const supabase = await createSupabaseServerClient()
     await supabase.auth.exchangeCodeForSession(code)
   }
 
