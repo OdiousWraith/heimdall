@@ -24,18 +24,115 @@
   --font-mono: 'Roboto Mono', monospace;
 }
 
+/* ── Base Reset ────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
 html, body {
   background-color: #0A0A0F;
   color: #F1F5F9;
+  font-family: 'Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ── Typography ────────────────────────────────────────────────────────────── */
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;       /* 32px */
+  font-weight: 700;
+  line-height: 1.2;
+  color: #F1F5F9;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;     /* 24px */
+  font-weight: 700;
+  line-height: 1.3;
+  color: #F1F5F9;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;   /* 18px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: #F1F5F9;
+}
+
+h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.875rem;   /* 14px */
+  font-weight: 600;
+  line-height: 1.4;
+  color: #A0AEC0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem;  /* 15px */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #F1F5F9;
+}
+
+/* ── Form Element Resets ───────────────────────────────────────────────────── */
+
+label {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #A0AEC0;
+  font-size: 0.875rem;
+}
+
+input,
+textarea,
+select {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9375rem;
+  color: #F1F5F9;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #A0AEC0;
+}
+
+button {
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+/* ── Dashboard Shell ───────────────────────────────────────────────────────── */
 
 .dashboard-shell {
   display: flex;
   flex-direction: column;
   height: 100dvh;
   overflow: hidden;
-  background: #0a0a0f;
+  background: #0A0A0F;
 }
 
 .dashboard-canvas {
