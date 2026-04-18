@@ -9,11 +9,17 @@
   /* Text */
   --color-text-main: #F1F5F9;
   --color-text-muted: #A0AEC0;
+  --color-text-disabled: #2D3748;
 
   /* Accents */
   --color-cyan:     #00F0FF;
   --color-magenta:  #FF00FF;
   --color-green:    #39FF14;
+
+--color-border-subtle: rgba(0, 240, 255, 0.08);
+--color-border-cyan: rgba(0, 240, 255, 0.15);
+--color-border-cyan-hover: rgba(0, 240, 255, 0.4);
+--color-frame-hover: #252535;
 
   /* Status */
   --color-warning:  #F59E0B;

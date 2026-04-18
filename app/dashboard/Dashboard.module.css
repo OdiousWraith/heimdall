@@ -1,0 +1,52 @@
+/* ── Canvas ── */
+.canvas {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--color-primary);
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Add button ── */
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--color-surface);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  color: var(--color-cyan);
+  cursor: pointer;
+  transition: border-color 200ms, background 200ms, box-shadow 200ms, transform 150ms;
+}
+
+.addBtn:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  background: var(--color-elevated);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.12);
+  transform: scale(1.04);
+}
+
+.addBtn:active {
+  transform: scale(0.97);
+}
+
+/* ── Hint ── */
+.hint {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+
+
+.hintLink:hover {
+  color: var(--color-cyan);
+}

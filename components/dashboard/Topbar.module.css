@@ -1,0 +1,339 @@
+/* ── Shell ── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 16px;
+  background: var(--color-surface);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 180px;
+}
+
+.center {
+  flex: 1 1 auto;
+  max-width: 480px;
+  margin: 0 24px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-width: 180px;
+  justify-content: flex-end;
+}
+
+/* ── Logo ── */
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logoWordmark {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-text-main);
+  white-space: nowrap;
+}
+
+/* ── Search ── */
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  border-radius: 8px;
+  padding: 0 12px;
+  height: 34px;
+  cursor: not-allowed;
+}
+
+.searchIcon {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.searchKbd {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  background: var(--color-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 2px 5px;
+  flex-shrink: 0;
+}
+
+/* ── Frame Pill ── */
+.framePillWrap {
+  position: relative;
+}
+
+.framePill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--color-elevated);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 20px;
+  padding: 0 12px;
+  height: 34px;
+  cursor: pointer;
+  color: var(--color-text-main);
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 150ms, background 150ms;
+  white-space: nowrap;
+}
+
+.framePill:hover {
+  border-color: var(--color-border-cyan);
+  background: var(--color-frame-hover);
+}
+
+.framePillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 6px var(--color-cyan);
+  flex-shrink: 0;
+}
+
+.framePillName {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.framePillChevron {
+  color: var(--color-text-muted);
+  transition: transform 200ms;
+  flex-shrink: 0;
+}
+
+.framePillChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Avatar ── */
+.avatarWrap {
+  position: relative;
+}
+
+.avatarBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.13), rgba(255, 0, 255, 0.13));
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--color-cyan);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.avatarBtn:hover {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+}
+
+/* ── Shared Dropdown ── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--color-elevated);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  border-radius: 10px;
+  padding: 6px;
+  z-index: 200;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  animation: dropIn 150ms ease-out;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.frameDropdown {
+  min-width: 160px;
+}
+
+.accountDropdown {
+  min-width: 220px;
+}
+
+.dropdownSectionLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 4px 8px 6px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 120ms, color 120ms;
+}
+
+.dropdownItem:hover:not(:disabled) {
+  background: rgba(0, 240, 255, 0.06);
+  color: var(--color-text-main);
+}
+
+.dropdownItem:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.dropdownItemActive {
+  color: var(--color-text-main);
+}
+
+.dropdownItemDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.dropdownCheck {
+  margin-left: auto;
+  color: var(--color-cyan);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 4px 0;
+}
+
+.dropdownComingSoon {
+  margin-left: auto;
+  font-size: 10px;
+  font-family: 'Roboto Mono', monospace;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.newFrame {
+  color: var(--color-cyan);
+}
+
+.newFrame:hover {
+  background: rgba(0, 240, 255, 0.08) !important;
+}
+
+.signOut {
+  color: var(--color-error);
+}
+
+.signOut:hover {
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #f87171 !important;
+}
+
+/* ── Account Identity ── */
+.dropdownIdentity {
+  padding: 6px 10px 8px;
+}
+
+.identityEmail {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.identityWallet {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-text-muted);
+  transition: color 120ms;
+}
+
+.identityWallet:hover {
+  color: var(--color-text-muted);
+}
+
+.walletMono {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+}
+
+.identityName {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,30 +1,34 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation'
-import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
+import { useState } from "react";
+import WidgetSearchModal from "@/components/dashboard/WidgetSearchModal";
+import styles from "./Dashboard.module.css";
 
 export default function DashboardPage() {
-  const router = useRouter()
-  const supabase = createSupabaseBrowserClient()
-
-  async function handleSignOut() {
-    await supabase.auth.signOut()
-    router.push('/')
-  }
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-primary flex items-center justify-center">
-      <div className="text-center space-y-3">
-        <span className="text-cyan text-5xl font-bold">Δ</span>
-        <p className="text-text-main text-xl font-semibold">HEIMDALL</p>
-        <p className="text-text-muted text-sm">Dashboard placeholder — auth is working.</p>
+    <>
+      <div className={styles.canvas}>
         <button
-          onClick={handleSignOut}
-          className="text-text-muted text-sm hover:text-cyan transition-colors"
+          className={styles.addBtn}
+          onClick={() => setModalOpen(true)}
+          aria-label="Add a Signal to this Frame"
         >
-          Sign out
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
         </button>
+
+        <p className={styles.hint}>
+          Your Frame is empty, add your first Signal.
+        </p>
       </div>
-    </main>
-  )
+
+      {modalOpen && (
+        <WidgetSearchModal onClose={() => setModalOpen(false)} />
+      )}
+    </>
+  );
 }

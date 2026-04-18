@@ -1,0 +1,52 @@
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 26px;
+  padding: 0 16px;
+  background: var(--color-surface);
+  border-top: 1px solid rgba(0, 240, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dotConnected {
+  background: var(--color-green);
+  box-shadow: 0 0 5px var(--color-green);
+}
+
+.item {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.sep {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  color: var(--color-text-disabled);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.version {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11px;
+  color: var(--color-text-disabled);
+}
