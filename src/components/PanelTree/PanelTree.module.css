@@ -1,0 +1,22 @@
+/* src/components/PanelTree/PanelTree.module.css */
+
+.split {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.splitHorizontal {
+  flex-direction: row;
+}
+
+.splitVertical {
+  flex-direction: column;
+}
+
+.pane {
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+}
